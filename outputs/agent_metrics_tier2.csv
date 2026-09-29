@@ -1,0 +1,7 @@
+agent_id,agent_name,tier,site,shift,agent_team,ticket_count,attended_count,csat_response_count,avg_csat,median_csat,low_csat_rate,handle_time_count,avg_handle_time,median_handle_time,sla_breach_count,sla_breach_rate,transfer_count,replacement_ticket_count,csat_rank_within_tier,tier_agent_count,bottom_ten_raw_tier1
+A3041,Jaspreet Desai,2,Bengaluru,Morning,Escalations & Warranty,200.0,189.0,89.0,2.4157303370786516,2.0,0.5617977528089888,189.0,7887.957671957672,7291.0,20.0,0.1,45.0,87.0,1.0,6,False
+A3042,Sneha Sethi,2,Bengaluru,Morning,Escalations & Warranty,201.0,191.0,91.0,2.4395604395604398,2.0,0.5054945054945055,191.0,6811.863874345549,4522.0,19.0,0.0945273631840796,37.0,100.0,2.0,6,False
+A3040,Tarun Fernandes,2,Indore,Morning,Escalations & Warranty,203.0,193.0,96.0,2.5520833333333335,2.5,0.5,193.0,7748.119170984456,4525.0,12.0,0.059113300492610835,40.0,104.0,3.0,6,False
+A3044,Pranav Khanna,2,Bengaluru,Day,Escalations & Warranty,251.0,244.0,105.0,2.5714285714285716,3.0,0.4666666666666667,244.0,8272.491803278688,5838.5,20.0,0.0796812749003984,37.0,112.0,4.0,6,False
+A3043,Kabir Varghese,2,Bengaluru,Morning,Escalations & Warranty,200.0,194.0,88.0,2.602272727272727,3.0,0.48863636363636365,194.0,8262.603092783505,7314.5,20.0,0.1,36.0,99.0,5.0,6,False
+A3039,Sameer Ghosh,2,Bengaluru,Day,Escalations & Warranty,249.0,237.0,115.0,2.8260869565217392,3.0,0.4,237.0,7922.358649789029,7282.0,22.0,0.08835341365461848,43.0,113.0,6.0,6,False

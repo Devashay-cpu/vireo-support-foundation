@@ -1,0 +1,36 @@
+{
+  "tickets": 11750,
+  "csat": 3.327,
+  "sla_breach_rate": 0.0906,
+  "core_cost_inr": 1184099,
+  "goal": {
+    "current": 3.327,
+    "target": 3.42
+  },
+  "months": 18,
+  "bottom_ten": [
+    "A3004",
+    "A3006",
+    "A3007",
+    "A3005",
+    "A3029",
+    "A3028",
+    "A3030",
+    "A3038",
+    "A3037",
+    "A3036"
+  ],
+  "train_now": [
+    "A3004",
+    "A3006",
+    "A3005",
+    "A3007"
+  ],
+  "defect_lots": [
+    "2510",
+    "2511",
+    "2512"
+  ],
+  "handle_time_agents": 44,
+  "agents_in_table": 44
+}

@@ -1,0 +1,114 @@
+VALIDATION REPORT
+============================================================
+
+[source]
+  PASS  tickets: dataframe rows == raw CSV records  (11750 vs 11750)
+  PASS  tickets: rows == documented expected count  (11750)
+  PASS  tickets: required columns present
+  PASS  tickets: no duplicate ticket_id  (0 dups)
+  PASS  agents: dataframe rows == raw CSV records  (44 vs 44)
+  PASS  agents: rows == documented expected count  (44)
+  PASS  agents: required columns present
+  PASS  agents: no duplicate agent_id  (0 dups)
+  PASS  customers: dataframe rows == raw CSV records  (9500 vs 9500)
+  PASS  customers: rows == documented expected count  (9500)
+  PASS  customers: required columns present
+  PASS  customers: no duplicate customer_id  (0 dups)
+  PASS  orders: dataframe rows == raw CSV records  (15500 vs 15500)
+  PASS  orders: rows == documented expected count  (15500)
+  PASS  orders: required columns present
+  PASS  orders: no duplicate order_id  (0 dups)
+  PASS  products: dataframe rows == raw CSV records  (14 vs 14)
+  PASS  products: rows == documented expected count  (14)
+  PASS  products: required columns present
+  PASS  products: no duplicate sku  (0 dups)
+
+[keys]
+  PASS  tickets.ticket_id has no missing values  (0 missing)
+  PASS  tickets.created_at has no missing values  (0 missing)
+  PASS  tickets.first_response_at has no missing values  (0 missing)
+  PASS  tickets.status has no missing values  (0 missing)
+  PASS  tickets.channel has no missing values  (0 missing)
+  PASS  tickets.customer_id has no missing values  (0 missing)
+  PASS  tickets.agent_id has no missing values  (0 missing)
+  PASS  tickets.product_sku has no missing values  (0 missing)
+  PASS  tickets.source_system has no missing values  (0 missing)
+  PASS  tickets.transfers has no missing values  (0 missing)
+
+[joins]
+  PASS  tickets.customer_id in customers
+  PASS  tickets.agent_id in agents
+  PASS  tickets.product_sku in products
+  PASS  tickets.order_id (when present) in orders
+  PASS  ticket customer_id/sku agree with linked order
+  PASS  orders.sku in products and orders.customer_id in customers
+  PASS  agents.agent_id unique (so agent_id join is 1:1)
+  PASS  shared-name agents exist and are distinct agent_ids  (1 shared name(s))
+  PASS  ticket_metrics has one row per source ticket, none dropped  (11750 vs 11750)
+
+[csat]
+  PASS  csat_responded == raw csat_score notna
+  PASS  no zero CSAT scores; all responses in 1..5
+  PASS  blank CSAT stays blank in output (not zero)
+  PASS  overall CSAT == mean of non-blank raw scores  (3.3266)
+  PASS  overall CSAT differs from blank-as-zero mean (guards against zero fill)
+  PASS  low_csat blank exactly where CSAT blank
+  PASS  low_csat == (score <= 2)
+
+[timestamps]
+  PASS  all non-blank timestamps parse
+  PASS  un-normalized legacy data has negative durations (proves shift is needed)  (66.5%)
+  PASS  un-normalized helpdesk data has no negative durations (proves helpdesk is already IST)
+  PASS  output resolved_at == raw (+5:30 for legacy only)
+  PASS  shifted row count == legacy rows with resolved_at  (3189)
+  PASS  created_at / first_response_at unchanged
+  PASS  no negative durations after normalization (created->resolved)
+  PASS  open/pending have no resolved_at; resolved/closed all have one
+  PASS  open/pending tickets have no handle time; not silently dropped from ticket_metrics
+
+[handle_time]
+  PASS  no negative handle_time_minutes
+  PASS  no negative first_response_minutes
+  PASS  first response never after resolution
+  PASS  handle_time == resolved(IST) - first_response, recomputed
+  PASS  handle-time ticket count == attended count  (11183)
+  PASS  no impossible handle time (> 30 days)
+  PASS  first_response_minutes recomputed
+
+[sla]
+  PASS  every channel has a policy target
+  PASS  sla_breach flag == independent recomputation
+  PASS  sla_target_minutes matches policy per channel
+  PASS  breach is strictly greater than target (boundary tickets not breached)
+  PASS  overall breach count == independent count  (1064)
+  PASS  channel breach counts sum to overall
+
+[agents]
+  PASS  one agent_metrics row per roster agent
+  PASS  agent ticket_count sums to total tickets
+  PASS  agent CSAT response counts sum to total responses
+  PASS  agent breach counts sum to overall
+  PASS  agent transfer_count sums to total transfers
+  PASS  agent replacement counts sum to total
+  PASS  response-weighted agent CSAT == overall CSAT
+  PASS  per-agent avg_csat == groupby mean on raw
+  PASS  tier column matches roster for every agent
+  PASS  Tier 2 has no bottom-ten flag and ranks are within tier
+  PASS  bottom-ten flag marks exactly 10 Tier 1 agents  (10)
+  PASS  agent_metrics_tier1.csv contains a single tier
+  PASS  agent_metrics_tier2.csv contains a single tier
+
+[economics]
+  PASS  replacement cost == sum(unit cost + Rs 340)  (Rs 3,415,990)
+  PASS  Rs 2,500 estimate not used (avg cost != 2500)  (avg Rs 1,802)
+  PASS  refund total == sum of raw refund_amount_inr
+  PASS  monthly ticket volume sums to total
+  PASS  monthly replacement cost sums to total
+  PASS  monthly refunds sum to total
+  PASS  channel volume sums to total
+  PASS  refund/retail ratio similar in legacy and helpdesk (no unit mismatch)  ({'helpdesk': 0.773, 'legacy_fd': 0.773})
+
+============================================================
+Checks performed: 89
+Passed: 89
+Failed: 0

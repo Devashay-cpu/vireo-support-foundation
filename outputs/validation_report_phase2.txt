@@ -1,0 +1,65 @@
+PHASE 2 VALIDATION REPORT
+============================================================
+  PASS  file exists: csat_trend.csv
+  PASS  file exists: agent_context.csv
+  PASS  file exists: training_priority.csv
+  PASS  file exists: root_causes.csv
+  PASS  file exists: business_impact.csv
+  PASS  file exists: business_analysis.md
+  PASS  independent: cohort ticket count == 1701  (1701)
+  PASS  independent: cohort replacements == 631  (631)
+  PASS  independent: cohort responses == 718
+  PASS  independent: cohort CSAT matches root cause text  (2.7716)
+  PASS  independent: cohort orders == 1979  (1979)
+  PASS  replacement cost per unit == unit cost + 340
+  PASS  independent: excess replacements == business_impact  (530.6 vs 531.0)
+  PASS  independent: excess replacement cost  (965614 vs 965614.0)
+  PASS  core total == sum of its two lines
+  PASS  SLA credit line == attended breaches x 350
+  PASS  transfer cost == transfers x 305  (1215)
+  PASS  sensitivity rows are not larger than 1.7x core
+  PASS  csat_trend: 18 months
+  PASS  csat_trend: tickets sum == 11750
+  PASS  csat_trend: responses sum == 5196
+  PASS  csat_trend: monthly avg CSAT == Phase 1 monthly_metrics  (4.8837209301932916e-05)
+  PASS  csat_trend: weighted overall == Phase 1 overall
+  PASS  csat_trend: CI brackets mean
+  PASS  csat_trend: scores within 1..5
+  PASS  csat_trend: no zero-filled CSAT (blank never 0)
+  PASS  csat_trend: defect responses sum == 718
+  PASS  csat_trend: defect tickets sum == 1701
+  PASS  csat_trend: rolling 3m last == Apr-Jun weighted
+  PASS  agent_context: 38 Tier-1 agents, unique ids
+  PASS  agent_context: only Tier 1 agents
+  PASS  agent_context: both Kavya Pandey ids kept separate
+  PASS  agent_context: exactly ten raw bottom-ten rows
+  PASS  agent_context: bottom ten == Phase 1 flag
+  PASS  agent_context: bottom ten are the ten lowest raw CSAT Tier 1
+  PASS  agent_context: raw avg_csat == Phase 1
+  PASS  agent_context: raw avg_csat == independent raw recompute
+  PASS  agent_context: mix shares in [0,1]
+  PASS  agent_context: channel shares sum to 1
+  PASS  agent_context: response-weighted mean residual ~ 0 (model is calibrated)  (2.8404163052916297e-06)
+  PASS  training_priority: Tier 1 only, no duplicates
+  PASS  training_priority: no Tier 2 agents
+  PASS  training_priority: ranks unique and consecutive
+  PASS  training_priority: sorted by priority score desc
+  PASS  training_priority: 'strong' rows have CI upper < 0
+  PASS  training_priority: non-strong rows have CI upper >= 0 or z > -1.5 unless watch
+  PASS  root_causes: 7 rows, ranks 1..7
+  PASS  root_causes: no blank evidence/action
+  PASS  business_impact: no negative amounts
+  PASS  business_impact: CSAT row is not given a rupee value
+  PASS  goal arithmetic: current + lift == target (3.327 + 0.089 = 3.416)  (3.3266+0.0890=3.4156)
+  PASS  goal arithmetic: gap x share == lift (independent)  (0.6440x0.1382=0.0890)
+  PASS  goal: target 3.42 stated in report
+  PASS  md: all nine sections present
+  PASS  md: no un-rendered nan/inf
+  PASS  md: Rs 2,500 email figure documented as not used
+  PASS  md: states blank CSAT excluded / respondents only
+  PASS  Phase 1 output present and non-empty: ticket_metrics.csv
+  PASS  Phase 1 output present and non-empty: agent_metrics.csv
+  PASS  Phase 1 output present and non-empty: monthly_metrics.csv
+  PASS  Phase 1 ticket_metrics still 11750 rows
+
+61/61 checks passed

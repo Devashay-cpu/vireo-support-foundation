@@ -1,0 +1,31 @@
+PASS  dashboard/index.html exists, non-empty
+PASS  dashboard/dashboard_data.json exists
+PASS  html: no 'nan'/'None'/'inf' text
+PASS  html: self-contained (no external URLs, no <script>, no <link>)
+PASS  html: size under 25 KB
+PASS  html: viewport meta + dark-mode css
+PASS  json: tickets == Phase 1 (11750)
+PASS  json: CSAT == Phase 1 overall
+PASS  json: core cost == business_impact core total
+PASS  html: shows core cost as exact rupees
+PASS  json: goal target 3.42 and arithmetic current+lift=target
+PASS  json: bottom ten == agent_context (10 ids)
+PASS  json: train-now == {A3004,A3005,A3006,A3007}
+PASS  html: every bottom-ten agent id appears
+PASS  html: only 4 rows labelled Coach
+PASS  html: six 'Queue mix' rows
+PASS  html: 18 monthly CSAT points in trend path
+PASS  html: both lines + 12 lot bars + defect bars
+PASS  html: limitations section present
+PASS  html: Rs 2,500 email figure not used
+PASS  handle: independent recompute per agent (median, mean, n) from ticket_metrics == agent_metrics
+PASS  handle: all-agents section present with Median + Mean handle columns
+PASS  handle: all 44 agents listed in the all-agents table
+PASS  handle: every agent's median AND mean handle time in the all-agents table equals agent_metrics.csv
+PASS  handle: every bottom-ten row shows median AND mean handle time equal to agent_metrics.csv
+PASS  handle: exactly 10 flagged rows in all-agents table, same ten as json/agent_context
+PASS  handle: Tier 2 agents listed but not flagged
+PASS  handle: json records 44 agents with handle time
+PASS  handle: interpretation note present (median first, queue-driven)
+
+29/29 checks passed

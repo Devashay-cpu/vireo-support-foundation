@@ -1,0 +1,10 @@
+item,basis,quantity,unit_cost_inr,amount_inr,treatment
+"Excess replacements, defective Pulse 2 lots","actual 631 minus expected 100 at baseline 5.1/100 orders; cost = unit Rs 1,480 + Rs 340 (policy s5), no refurbishment recovery",531.00,1820.00,965614.00,"core, order-linked tickets only (lower bound)"
+"Excess contacts, defective Pulse 2 lots",actual 1701 minus expected 911 at baseline 46 tickets/100 orders; cost = channel contact cost (policy s4) weighted by cohort channel mix,790.00,276.60,218485.00,"core, order-linked tickets only (lower bound)"
+CORE TOTAL: measured direct cost of the defect,sum of the two lines above,,,1184099.00,headline
+"Sensitivity: baseline from Jul-Sep 2025 lots only (fully matured, excludes recent right-censored lots)",baseline 5.4 replacements and 50 tickets per 100 orders,,,1152787.00,robustness check; 2.6% from core
+Sensitivity: scale core total for the 34.6% of Pulse 2 tickets with no order link,"only 65.4% of Pulse 2 tickets can be tied to a lot; if unlinked tickets behave the same, core / link rate",,,1809862.00,"upper estimate, assumption-dependent, not used in the goal"
+SLA credits paid on attended breaches,"1014 attended breaches x Rs 350, issued regardless of reason (policy s3)",1014.00,350.00,354900.00,"context: not defect-specific, only partly avoidable"
+Transfer handling cost,1215 transfers x Rs 305 (policy s4),1215.00,305.00,370575.00,"context: not defect-specific, only partly avoidable"
+Tickets with refund AND replacement (policy s5 breach),6 tickets; refund + replacement cost,6.00,,25577.00,"control failure; small, escalate to Finance"
+CSAT drag from the defect cohort (not monetised),13.8% of responses at 2.77 vs 3.42 for the rest; blended CSAT 3.327 would be 3.416,,,,"no revenue/retention data in the pack, so no rupee value is claimed"

@@ -1,0 +1,79 @@
+PASS  required file present: README.md
+PASS  required file present: requirements.txt
+PASS  required file present: FINAL_MEMO.md
+PASS  required file present: data/raw/tickets.csv
+PASS  required file present: data/raw/agents.csv
+PASS  required file present: data/raw/orders.csv
+PASS  required file present: data/raw/customers.csv
+PASS  required file present: data/raw/products.csv
+PASS  required file present: data/raw/support-policy.pdf
+PASS  required file present: analysis/foundation_summary.md
+PASS  required file present: analysis/business_analysis.md
+PASS  required file present: analysis/csat_trend.csv
+PASS  required file present: analysis/agent_context.csv
+PASS  required file present: analysis/training_priority.csv
+PASS  required file present: analysis/root_causes.csv
+PASS  required file present: analysis/business_impact.csv
+PASS  required file present: dashboard/index.html
+PASS  required file present: dashboard/dashboard_data.json
+PASS  required file present: outputs/ticket_metrics.csv
+PASS  required file present: outputs/validation_report.txt
+PASS  required file present: outputs/validation_report_phase2.txt
+PASS  required file present: outputs/validation_report_task4.txt
+PASS  required file present: src/pipeline.py
+PASS  required file present: src/phase2.py
+PASS  required file present: src/dashboard.py
+PASS  required file present: src/memo.py
+PASS  required file present: src/validate.py
+PASS  required file present: src/validate_phase2.py
+PASS  required file present: src/validate_task4.py
+PASS  required file present: tests/run_tests.py
+PASS  required file present: MEMO_TO_PRIYA.md
+PASS  required file present: src/memo_priya.py
+PASS  required file present: src/run_all.py
+PASS  required file present: VALIDATION.md
+PASS  required file present: submission-form.md
+PASS  required file present: SCREEN_RECORDING_OUTLINE.md
+PASS  required file present: .gitignore
+PASS  memo: 11 numbered sections
+PASS  memo: no nan/None/inf
+PASS  memo contains verified figure: CSAT 3.33
+PASS  memo contains verified figure: n=5,196
+PASS  memo contains verified figure: trough
+PASS  memo contains verified figure: core cost
+PASS  memo contains verified figure: SLA breaches
+PASS  memo contains verified figure: goal 3.42
+PASS  memo contains verified figure: replacement rate 31.9
+PASS  memo contains verified figure: 1,979 orders
+PASS  memo contains verified figure: cohort CSAT n=718
+PASS  memo: train-now agents are exactly A3004-A3007
+PASS  memo: addressed to Priya Raman; no stale 'brief unavailable' claim
+PASS  memo: mentions handle time and the free-text exclusion
+PASS  memo: Rs 2,500 only mentioned as not applicable
+PASS  memo agrees with business_analysis.md on core cost
+PASS  priya memo: addressed to Priya Raman
+PASS  priya memo: one page (<= 600 words)
+PASS  priya memo: no nan/None/inf
+PASS  priya memo: non-technical (no z-score / CI / policy section refs)
+PASS  priya memo contains: CSAT now
+PASS  priya memo contains: goal
+PASS  priya memo contains: core cost lakh
+PASS  priya memo contains: core cost exact
+PASS  priya memo contains: replacement rate
+PASS  priya memo contains: trough
+PASS  priya memo contains: handle time section
+PASS  priya memo contains: bottom ten section
+PASS  priya memo contains: target section
+PASS  priya memo names exactly the four train-now agents
+PASS  priya memo: does not use the email's Rs 2,500
+PASS  README: no stale 'brief not available' / 'Phase 1 only' claims
+PASS  README: documents run_all and both memos
+PASS  submission form: every brief question present
+PASS  submission form: manual items explicitly marked
+PASS  submission form: figures match verified outputs
+PASS  dashboard: shows per-agent handle time (median + mean) for all 44 agents
+PASS  dashboard: standalone (no http, script, link, img src)
+PASS  dashboard core cost matches memo
+PASS  no hard-coded sandbox paths in code
+
+77/77 checks passed
